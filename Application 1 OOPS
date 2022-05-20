@@ -1,0 +1,30 @@
+class Movie:
+    def __init__(self, title, actor, actoress):
+        self.title = title
+        self.actor = actor
+        self.actoress = actoress
+
+    def info(self):
+        print('The name of the movie is: ', self.title)
+        print('The actor of the movie is: ', self.actor)
+        print('The actoress of the movie is: ', self.actoress)
+
+list_of_movies = []
+while True:
+    title = input("Give the title of the movie: ")
+    actor = input("Give the actor of the movie: ")
+    actoress = input("Give the actoress of the movie: ")
+    m = Movie(title, actor, actoress)
+    list_of_movies.append(m)
+    option = input('If you want to add more names of the movie [YES|NO]: ')
+    if option.lower() == 'no':
+        print('Your data successfully entered !')
+        break
+
+print()
+print("List of movies....")
+print('#'*30)
+print()
+for movie in list_of_movies:
+    movie.info()
+    print()
